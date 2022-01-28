@@ -1,0 +1,4 @@
+buildozer
+cython
+kivy
+pylogix
