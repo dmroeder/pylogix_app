@@ -31,6 +31,6 @@ buildozer android deploy run
 ```
 
 There are a couple of things to edit in the buildozer.spec file.
-  *package.name will be the name of your app.  You can name it whatever you want
-  *version is your app version number, you should change ths with each new apk compiled
-  *orientation will change whether your app is portraite or landscape
+ - package.name will be the name of your app.  You can name it whatever you want
+ - version is your app version number, you should change ths with each new apk compiled
+ - orientation will change whether your app is portraite or landscape
