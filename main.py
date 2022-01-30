@@ -4,6 +4,7 @@ from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
+from kivy.uix.checkbox import CheckBox
 from kivy.uix.button import Button
 
 class MainUI(GridLayout):
@@ -21,6 +22,9 @@ class MainUI(GridLayout):
         self.layout.add_widget(Label(text="IP Address"))
         self.ip_address = TextInput(multiline=False, text="192.168.1.10")
         self.layout.add_widget(self.ip_address)
+        self.layout.add_widget(Label(text="Micro800"))
+        self.micro800 = CheckBox(active=False)
+        self.layout.add_widget(self.micro800)
         self.layout.add_widget(Label(text="Tag Name"))
         self.tag_name = TextInput(multiline=False, text="MyDINT")
         self.layout.add_widget(self.tag_name)
@@ -50,6 +54,8 @@ class MainUI(GridLayout):
         """
         Read a tag
         """
+        micro800 = self.micro800.active
+        self.comm.Micro800 = micro800
         ip = self.ip_address.text
         self.comm.IPAddress = ip
         tag = self.tag_name.text
